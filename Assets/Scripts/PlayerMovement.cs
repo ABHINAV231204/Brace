@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     void Start()
     {
+        Debug.Log("Started");
         IsSitting = false;
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();

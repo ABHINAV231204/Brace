@@ -11534,6 +11534,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1313142153, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313142153, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1432436299
+      objectReference: {fileID: 0}
+    - target: {fileID: 597648393482997998, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 597648393482997998, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1432436299
+      objectReference: {fileID: 0}
     - target: {fileID: 2656072385988403203, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -11581,6 +11597,14 @@ PrefabInstance:
     - target: {fileID: 2656072385988403206, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
       propertyPath: m_Name
       value: 'Brace '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088001521214918873, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088001521214918873, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1432436299
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf8c9fce34f9cc7448bfe640e316131e, type: 3}
