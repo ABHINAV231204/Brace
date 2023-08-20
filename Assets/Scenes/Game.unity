@@ -543,8 +543,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 474598493
-  m_SortingLayer: 5
+  m_SortingLayerID: -1432436299
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7273182288970780907, guid: 0d2dffc11a0885141b4423b1d76acb68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13567,8 +13567,8 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -1
-      minScalar: 1
+      scalar: 2
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -17156,7 +17156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &890608665
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -22966,7 +22966,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1757767424}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 25
+    OrthographicSize: 15
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -117983,11 +117983,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6863723079732191481, guid: 765b1c80e419bd74cb50e97c2e5cd9d0, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6863723079732191481, guid: 765b1c80e419bd74cb50e97c2e5cd9d0, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[3]
       value: -1721413581
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863723079732191481, guid: 765b1c80e419bd74cb50e97c2e5cd9d0, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1432436299
       objectReference: {fileID: 0}
     - target: {fileID: 8731223055423983016, guid: 765b1c80e419bd74cb50e97c2e5cd9d0, type: 3}
       propertyPath: m_Name

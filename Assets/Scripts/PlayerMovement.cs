@@ -68,9 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public void Sit()
-    {
-
-        Debug.Log("sergesd");
+    {        
             if (IsSitting) { return; }
             if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
