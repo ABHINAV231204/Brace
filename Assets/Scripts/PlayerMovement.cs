@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     bool IsSitting;
     bool IsTorchOn;
+    public bool IsAlive = true;
 
     Animator myAnimator;
     BoxCollider2D feetCollider;
@@ -25,14 +26,19 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         feetCollider=GetComponent<BoxCollider2D>();
+ 
     }
 
    
     void Update()
     {
-        Run();
-        FlipSprite();
-        Torch();
+        if(IsAlive)
+        {
+            Run();
+            FlipSprite();
+            Torch();
+        }
+       
     }
 
     void OnMove(InputValue value)

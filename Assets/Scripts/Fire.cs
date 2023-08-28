@@ -8,8 +8,10 @@ public class Fire : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKeySit;
     public KeyCode interactKeyStand;
+
     public UnityEvent interactActionSit;
     public UnityEvent interactActionStand;
+ 
     public GameObject controlText;
     
     void Update()

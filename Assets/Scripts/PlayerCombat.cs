@@ -7,15 +7,26 @@ public class PlayerCombat : MonoBehaviour
     public Animator playerAnim;
     public Transform attackPoint;
 
+    public LayerMask enemyLayers;
+
     public float attackRange = 0.5f;
-    public int attackDamage = 40;
     public float attackRate = 2f;
+
+    public int attackDamage = 40;
+    public int playermaxHealth = 100;
+    public int playerHealth;
+
+    public bool isAlive;
 
     float attackNextTime = 0f;
 
-    public LayerMask enemyLayers;
 
 
+    private void Start()
+    {
+        isAlive = GetComponent<PlayerMovement>().IsAlive;
+        playerHealth = playermaxHealth;
+    }
     void Update()
     {
         if (Time.time >= attackNextTime)
@@ -27,6 +38,9 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+
+    
+
 
     void Attack()
     {
@@ -44,6 +58,32 @@ public class PlayerCombat : MonoBehaviour
 
         //deal damage to the enemies 
     }
+      
+    public void TakeDamagePlayer(int damage)
+    {
+        playerHealth -= damage;
+
+        if (playerHealth <= 0)
+        {
+            playerAnim.SetTrigger("Death");
+            isAlive = false;
+
+            playerAnim.GetComponent<CapsuleCollider2D>().enabled = false;
+            playerAnim.GetComponent<BoxCollider2D>().enabled = false;
+
+            playerAnim.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezePositionX;
+
+            StartCoroutine(GameOverPause());
+
+        }
+    }
+
+    IEnumerator GameOverPause()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0f;
+    }
+   
 
     private void OnDrawGizmosSelected()
     {
