@@ -20,10 +20,7 @@ public class EnemyRun : StateMachineBehaviour
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        
-        
-
+    {                
         rb.GetComponent<DamageScript>().LookAtPlayer();
 
         Vector2 target = new Vector2(player.position.x, player.position.y);
@@ -32,7 +29,7 @@ public class EnemyRun : StateMachineBehaviour
 
         if (Vector2.Distance(player.position, rb.position) <= attackRange)
         {
-            //Attack
+            //Enemy Attack
             rb.GetComponent<Animator>().SetTrigger("attack");
          
         }
@@ -43,12 +40,5 @@ public class EnemyRun : StateMachineBehaviour
     {
         animator.ResetTrigger("attack");
         animator.GetComponent<EnemyWeapon>().Attack();
-    }
-
-    public void stopEnemy()
-    {
-        attackRange = 0f;
-    }
-
-    
+    }       
 }
