@@ -6,7 +6,6 @@ public class EnemyRun : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float attackRange = 3f;
-    
 
     Transform player;
     Rigidbody2D rb;
@@ -23,7 +22,7 @@ public class EnemyRun : StateMachineBehaviour
     {                
         rb.GetComponent<DamageScript>().LookAtPlayer();
 
-        Vector2 target = new Vector2(player.position.x, player.position.y);
+        Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPosition = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPosition);
 

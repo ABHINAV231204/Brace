@@ -37,8 +37,18 @@ public class PlayerMovement : MonoBehaviour
             Run();
             FlipSprite();
             Torch();
+            InAirAnimations();
         }
        
+    }
+
+    void InAirAnimations()
+    {
+        bool playerHasPositiveVerticalSpeed = (Mathf.Abs(rb.velocity.y) > Mathf.Epsilon) && Mathf.Sign(rb.velocity.y) ==  1;
+        bool playerHasNegativeVerticalSpeed = (Mathf.Abs(rb.velocity.y) > Mathf.Epsilon) && Mathf.Sign(rb.velocity.y) == -1;
+
+        myAnimator.SetBool("isFlyingUp", playerHasPositiveVerticalSpeed);
+        myAnimator.SetBool("isFlyingDown", playerHasNegativeVerticalSpeed);
     }
 
     void OnMove(InputValue value)

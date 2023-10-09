@@ -28,4 +28,10 @@ public class Buttons : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
 }

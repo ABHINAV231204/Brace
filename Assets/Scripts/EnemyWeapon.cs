@@ -12,12 +12,6 @@ public class EnemyWeapon : MonoBehaviour
     public LayerMask playerMask;
     public Transform attackPoint;
 
-    
-    void Start()
-    {
-        
-    }
-
     public void Attack()
     {        
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerMask);

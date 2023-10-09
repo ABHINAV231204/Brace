@@ -9,9 +9,11 @@ public class PlayerCombat : MonoBehaviour
 
     public LayerMask enemyLayers;
 
+    //Enemy range
     public float attackRange = 0.5f;
     public float attackRate = 2f;
 
+    //Attack and Damage points 
     public int attackDamage = 40;
     public int playermaxHealth = 100;
     public int playerHealth;
@@ -29,6 +31,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Update()
     {
+        //This section manages that the player can attack only 2 times (attack rate) in 1 second
         if (Time.time >= attackNextTime)
         {
             if (Input.GetKeyDown(KeyCode.C))
@@ -39,15 +42,13 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    
-
-
     void Attack()
     {
         //play attack animation
         playerAnim.SetTrigger("Attack");
 
         //detecting enemies in range
+        //Creates an virtual circle at the attack point to detect the layers that come in contact with it 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach(Collider2D enemy in hitEnemies)
