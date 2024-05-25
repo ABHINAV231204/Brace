@@ -2,6 +2,10 @@
 
 "Jack in the Wild" is a 2D pixel art game that blends the essence of classic platforming with modern aesthetics. Set in a nocturnal world, players control Jack, navigating through mysterious landscapes filled with skeletal foes and other nightmarish creatures. Inspired by the iconic gameplay of Mario, "Jack in the Wild" offers a unique twist with its dark, moody themes and intense combat sequences.
 
+https://github.com/lla-dane/Jack-in-the-wild/assets/120122716/122aaa4a-8f2e-4af9-a633-cc5a06c9b7f8
+
+## Checkout the present build at [itch](https://lla-dane.itch.io/jack-in-the-wild).
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -16,7 +20,7 @@ To play "Jack in the Wild," follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/jack-in-the-wild.git
+   git clone https://github.com/lla-dane/jack-in-the-wild.git
    ```
 
 2. Install [Unity Hub](https://unity.com/download).
