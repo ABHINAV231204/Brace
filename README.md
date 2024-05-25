@@ -4,7 +4,7 @@
 
 https://github.com/lla-dane/Jack-in-the-wild/assets/120122716/122aaa4a-8f2e-4af9-a633-cc5a06c9b7f8
 
-## Checkout the present build at [itch](https://lla-dane.itch.io/jack-in-the-wild).
+## Checkout the present build on [itch](https://lla-dane.itch.io/jack-in-the-wild).
 
 ## Table of Contents
 
@@ -43,7 +43,7 @@ To play "Jack in the Wild," follow these steps:
 
 - Use arrow keys to move Jack and spacefat to make him jump.
 
-- Press T to toggle the torch.
+- Press T to toggle the torch, and C for punching.
 
 - Avoid obstacles, defeat enemies, and collect items to progress through the game.
 
