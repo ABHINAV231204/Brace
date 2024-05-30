@@ -8,6 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
 
     public LayerMask enemyLayers;
+    public HealthBar hb;
 
     //Enemy range
     public float attackRange = 0.5f;
@@ -28,6 +29,8 @@ public class PlayerCombat : MonoBehaviour
     {
         isAlive = GetComponent<PlayerMovement>().IsAlive;
         playerHealth = playermaxHealth;
+        hb.setMaxHealth(playermaxHealth);
+        hb.setHealth(playermaxHealth);
     }
     void Update()
     {
@@ -63,6 +66,7 @@ public class PlayerCombat : MonoBehaviour
     public void TakeDamagePlayer(int damage)
     {
         playerHealth -= damage;
+        hb.setHealth(playerHealth);
 
         if (playerHealth <= 0)
         {
