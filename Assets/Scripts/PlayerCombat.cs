@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator playerAnim;
@@ -22,7 +22,9 @@ public class PlayerCombat : MonoBehaviour
     public bool isAlive;
 
     float attackNextTime = 0f;
-
+    int currentLive = 3,totalLives=3;
+    public Image[] lives;int index=2;
+    public Transform spawnPoint;
 
 
     private void Start()
@@ -42,6 +44,12 @@ public class PlayerCombat : MonoBehaviour
                 Attack();
                 attackNextTime = Time.time + 1f / attackRate;
             }
+        }
+        if(currentLive<totalLives){
+            transform.position = spawnPoint.position;
+            totalLives=currentLive;
+            playerHealth = playermaxHealth;
+            hb.setHealth(playerHealth);
         }
     }
 
@@ -69,7 +77,11 @@ public class PlayerCombat : MonoBehaviour
         hb.setHealth(playerHealth);
 
         if (playerHealth <= 0)
+
         {
+            currentLive--;
+            lives[index--].enabled=false;
+            if(currentLive == 0){
             playerAnim.SetTrigger("Death");
             isAlive = false;
 
@@ -80,6 +92,7 @@ public class PlayerCombat : MonoBehaviour
 
             StartCoroutine(GameOverPause());
 
+        }
         }
     }
 
@@ -96,5 +109,10 @@ public class PlayerCombat : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    public void OnTriggerEnter2D(Collision2D collision){
+        if(collision.gameObject.CompareTag("spawnPoint")){
+            Debug.Log("spaawn");
+        }
     }
 }
