@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-   public void Play(){
+    
+   public void Play()
+   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    Time.timeScale = 1f;
    }
    public void Quit(){
     Application.Quit();
