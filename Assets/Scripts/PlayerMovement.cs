@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 8f;
     public float jumpSpeed = 28f;
     public GameObject torch;
+    int doubleJump = 2;
 
     Vector2 moveInput;
     bool IsSitting;
@@ -59,14 +60,31 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (IsSitting) { return; }
-        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (IsSitting) {
+            
+             return; }
+        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && doubleJump == 0)
         {
             return;
         }
-        if (value.isPressed)
+        if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){doubleJump = 2;}
+      
+        if (value.isPressed && doubleJump!=0)
         {
+            if(doubleJump==2)
             rb.velocity += new Vector2(0f, jumpSpeed);
+            else
+            {
+            
+            if((Mathf.Abs(rb.velocity.y) > Mathf.Epsilon) && Mathf.Sign(rb.velocity.y)>0)
+            rb.velocity += new Vector2(0f, jumpSpeed/1.5f);
+            else
+            rb.velocity = new Vector2(0f, jumpSpeed);
+
+
+            }
+
+            doubleJump--;
         }
     }
 
