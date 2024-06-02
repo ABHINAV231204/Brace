@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator playerAnim;
@@ -23,7 +24,8 @@ public class PlayerCombat : MonoBehaviour
 
     float attackNextTime = 0f;
     int currentLive = 3,totalLives=3;
-    public Image[] lives;int index=2;
+    public TextMeshProUGUI lifeIndicator;
+   
     public Transform spawnPoint;
 
 
@@ -46,10 +48,15 @@ public class PlayerCombat : MonoBehaviour
             }
         }
         if(currentLive<totalLives){
+            if(isAlive){
             transform.position = spawnPoint.position;
             totalLives=currentLive;
             playerHealth = playermaxHealth;
             hb.setHealth(playerHealth);
+            }
+            else{
+                hb.setHealth(0);
+            }
         }
     }
 
@@ -80,7 +87,7 @@ public class PlayerCombat : MonoBehaviour
 
         {
             currentLive--;
-            lives[index--].enabled=false;
+            lifeIndicator.text = ""+currentLive;
             if(currentLive == 0){
             playerAnim.SetTrigger("Death");
             isAlive = false;
