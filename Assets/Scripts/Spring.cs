@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spring : MonoBehaviour
 {
+  public  PlayerMovement pm;
     Animator myAnimator;
     void Start()
     {
@@ -15,9 +16,10 @@ public class Spring : MonoBehaviour
        if(other.tag=="Player")
         {
             myAnimator.SetBool("isActivate", true);
-            
         }
+        
         StartCoroutine(WaitBeforeActivate());
+
     }
 
     IEnumerator WaitBeforeActivate()

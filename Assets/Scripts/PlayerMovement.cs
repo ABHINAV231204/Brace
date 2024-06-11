@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed = 28f;
     public GameObject torch;
     int doubleJump = 2;
+    public bool onSpring = false;
 
     Vector2 moveInput;
     bool IsSitting;
@@ -20,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     BoxCollider2D feetCollider;
     Rigidbody2D rb;
+
+    public AudioClip jumpsound;
+    public AudioSource SFXspeaker;
     void Start()
     {
         Debug.Log("Started");
@@ -35,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(IsAlive)
         {
+           
             Run();
             FlipSprite();
             Torch();
@@ -67,10 +72,12 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){doubleJump = 2;}
+        if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {doubleJump = 2; onSpring = false;}
       
-        if (value.isPressed && doubleJump!=0)
+        if (value.isPressed && doubleJump!=0 && !onSpring)
         {
+            SFXspeaker.PlayOneShot(jumpsound);
             if(doubleJump==2)
             rb.velocity += new Vector2(0f, jumpSpeed);
             else
