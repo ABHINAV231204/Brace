@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8310279174376481135, guid: 1c3d67aa8fd368140bcf5c5d5543e984, type: 3}
   spotlight: {fileID: 655413304}
-  recoilforce: 1
+  recoilforce: 0
   interactKeySit: 101
   interactKeyStand: 102
   PlayerInGunArea: 0
@@ -1746,9 +1746,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 56.25549, y: 5}
+  m_Offset: {x: 56.269035, y: 4.715419}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 2.7533054
 --- !u!1001 &646158443
 PrefabInstance:
   m_ObjectHideFlags: 0

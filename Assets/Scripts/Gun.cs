@@ -50,7 +50,7 @@ public class Gun : MonoBehaviour
             }
 
             if(characterisongun) {
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKey(KeyCode.P))
                 {
                     // Create a new bullet instance
                     GameObject bulletInstance = Instantiate(bulletPrefab);
