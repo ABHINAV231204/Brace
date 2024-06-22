@@ -7,6 +7,8 @@ public class pauseScript : MonoBehaviour
 {
     public GameObject pauseMenu;
     public ParticleSystem[] snow = new ParticleSystem[2];
+    public AudioSource clicks;
+    public AudioClip clickSound;
     
     //This had to be done...sort order ain't working;
     public GameObject canvas;
@@ -29,11 +31,14 @@ public class pauseScript : MonoBehaviour
     void Pause(){
         isPaused = true;
         Time.timeScale = 0f;
+        clicks.PlayOneShot(clickSound);
         pauseMenu.SetActive(true);
         canvas.SetActive(false);
 
     }
      public void Resume(){
+        clicks.PlayOneShot(clickSound);
+
         isPaused = false;
         Time.timeScale = 1f;
 
@@ -43,6 +48,8 @@ public class pauseScript : MonoBehaviour
     }
     public void Restart()
     {
+        clicks.PlayOneShot(clickSound);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
