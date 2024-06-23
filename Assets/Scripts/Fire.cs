@@ -13,6 +13,7 @@ public class Fire : MonoBehaviour
     public UnityEvent interactActionStand;
  
     public GameObject controlText;
+    public bool isSitting = false;
     
     void Update()
     {
@@ -23,11 +24,14 @@ public class Fire : MonoBehaviour
             if(Input.GetKeyDown(interactKeySit))
             {
                 interactActionSit.Invoke();
+                isSitting = true;
+                
             }
 
             if (Input.GetKeyDown(interactKeyStand))
             {
                 interactActionStand.Invoke();
+                isSitting = false;
             }
         }
     }
