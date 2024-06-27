@@ -9,6 +9,7 @@ public class key : MonoBehaviour
 
     public GameObject keyobj;
     public bool keyisequipped;
+    private bool keyarea;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class key : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+
             keyisequipped = true;
             keyobj.SetActive(false);
             Destroy(keyobj);
@@ -29,6 +31,10 @@ public class key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (keyarea)
+        {
+            keyisequipped = true;
+        }
         
     }
 }
