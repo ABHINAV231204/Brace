@@ -39499,15 +39499,18 @@ MonoBehaviour:
   totalMana: 200
   isShield: 1
   isFire: 1
-  shieldCost: 60
-  fireCost: 80
+  shieldCost: 200
+  fireCost: 200
   sr: {fileID: 0}
   shield: {fileID: 1432133403}
-  shieldHealth: 50
+  shieldHealth: 200
   shieldEnabled: 0
   firePoint: {fileID: 2028059539}
   bullet: {fileID: 2438861913470433599, guid: 74080eb7b99242f4eaf3003d4b65c107, type: 3}
   mb: {fileID: 1478034917}
+  Sfx: {fileID: 1500119490}
+  shieldsound: {fileID: 8300000, guid: 13f70b36ae3d962458629a39f592fd77, type: 3}
+  boltsound: {fileID: 8300000, guid: a8b6dedefe4549d4db81252eeb11f58e, type: 3}
 --- !u!1 &1775102174
 GameObject:
   m_ObjectHideFlags: 0
