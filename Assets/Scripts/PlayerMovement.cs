@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool IsSitting;
     bool IsTorchOn;
     public bool IsAlive = true;
+    public GameObject firepoint;
 
     Animator myAnimator;
     BoxCollider2D feetCollider;
@@ -145,14 +146,24 @@ public class PlayerMovement : MonoBehaviour
 
         myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
     }
-
+    bool facingright = true;
     void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-
+        
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
+            if(facingright && Mathf.Sign(rb.velocity.x)==-1 )
+                {
+                    facingright = false;
+                    firepoint.transform.Rotate(0,180,0);
+                }
+            if(!facingright && Mathf.Sign(rb.velocity.x)==1 )
+                {
+                    facingright = true;
+                    firepoint.transform.Rotate(0,180,0);
+                }
 
         }
 

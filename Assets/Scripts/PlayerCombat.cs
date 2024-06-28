@@ -28,10 +28,14 @@ public class PlayerCombat : MonoBehaviour
    
     public Transform spawnPoint;
 
+    public NewBehaviourScript ns;
+    
+
 
     private void Start()
     {
         isAlive = GetComponent<PlayerMovement>().IsAlive;
+        
         playerHealth = playermaxHealth;
         hb.setMaxHealth(playermaxHealth);
         hb.setHealth(playermaxHealth);
@@ -80,6 +84,9 @@ public class PlayerCombat : MonoBehaviour
       
     public void TakeDamagePlayer(int damage)
     {
+        if(ns.shieldEnabled)
+        ns.shieldHealth-=damage;
+        else{
         playerHealth -= damage;
         hb.setHealth(playerHealth);
 
@@ -99,6 +106,7 @@ public class PlayerCombat : MonoBehaviour
 
             StartCoroutine(GameOverPause());
 
+        }
         }
         }
     }
