@@ -23,7 +23,7 @@ public class key : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            keyisequipped = true;
+            keyisequipped = true; //I have no idea why this isnt working 
             keyobj.SetActive(false);
             Destroy(keyobj);
         }
@@ -31,10 +31,7 @@ public class key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (keyarea)
-        {
-            keyisequipped = true;
-        }
+       
         
     }
 }
